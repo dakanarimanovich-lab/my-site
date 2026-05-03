@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkilLand</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+        }
+
+        header {
+            background: #020617;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 100px 20px;
+            min-height: 100vh;
+        }
+
+        .hero {
+            text-align: center;
+            padding-top: 150px;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #38bdf8;
+            color: black;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 250px;
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #020617;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>SkilLand</h1>
+    <nav>
+        <a onclick="scrollToSection('about')">О нас</a>
+        <a onclick="scrollToSection('features')">Возможности</a>
+        <a onclick="scrollToSection('contact')">Контакты</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Синергия образования и бизнеса</h2>
+    <p>Цифровая платформа для объединения школ, колледжей и вузов</p>
+    <button class="btn" onclick="scrollToSection('about')">Узнать больше</button>
+</section>
+
+<section id="about">
+    <h2>О платформе</h2>
+    <p>
+        SkilLand — это современная цифровая платформа, которая помогает 
+        объединить образовательные учреждения и бизнес.
+        Мы создаём экосистему для профориентации учащихся и формирования кадрового потенциала.
+    </p>
+</section>
+
+<section id="features">
+    <h2>Возможности</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Профориентация</h3>
+            <p>Помогаем школьникам выбрать будущую профессию.</p>
+        </div>
+
+        <div class="card">
+            <h3>Партнёрство</h3>
+            <p>Связываем учебные заведения с бизнесом.</p>
+        </div>
+
+        <div class="card">
+            <h3>Карьерный рост</h3>
+            <p>Формируем навыки, востребованные на рынке труда.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Контакты</h2>
+    <p>Email: info@skilland.kz</p>
+    <button class="btn" onclick="alert('Спасибо за интерес к SkilLand!')">
+        Связаться
+    </button>
+</section>
+
+<footer>
+    <p>© 2026 SkilLand</p>
+</footer>
+
+<script>
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+</script>
+
+</body>
+</html>
