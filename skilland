@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkilLand</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f6f9;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+nav {
+    background: #222;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #00f2fe;
+}
+
+.container {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.section {
+    margin-bottom: 60px;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+    color: #4facfe;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 1 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+button {
+    background: #4facfe;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00c6ff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header id="home">
+    <h1>SkilLand</h1>
+    <p>Синергия образования и бизнеса</p>
+    <br>
+    <button onclick="goToForm()">Начать</button>
+</header>
+
+<nav>
+    <a href="#home">Главная</a>
+    <a href="#about">О нас</a>
+    <a href="#courses">Курсы</a>
+    <a href="#contacts">Контакты</a>
+</nav>
+
+<div class="container">
+
+    <div class="section" id="about">
+        <h2>О проекте</h2>
+        <p>
+            SkilLand — платформа, объединяющая образование и бизнес.
+            Получай навыки и применяй их сразу на практике.
+        </p>
+    </div>
+
+    <div class="section" id="courses">
+        <h2>Наши направления</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>IT</h3>
+                <p>Создание сайтов и приложений</p>
+                <button onclick="showCourse('IT')">Подробнее</button>
+            </div>
+            <div class="card">
+                <h3>Бизнес</h3>
+                <p>Стартапы и заработок</p>
+                <button onclick="showCourse('Бизнес')">Подробнее</button>
+            </div>
+            <div class="card">
+                <h3>Маркетинг</h3>
+                <p>Продвижение и реклама</p>
+                <button onclick="showCourse('Маркетинг')">Подробнее</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="contacts">
+        <h2>Регистрация</h2>
+
+        <form onsubmit="sendForm(event)">
+            <input type="text" placeholder="Имя" required>
+            <input type="email" placeholder="Email" required>
+            <button type="submit">Отправить</button>
+        </form>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 SkilLand</p>
+</footer>
+
+<script>
+function goToForm() {
+    document.getElementById("contacts").scrollIntoView();
+}
+
+function showCourse(name) {
+    alert("Ты выбрал направление: " + name);
+}
+
+function sendForm(event) {
+    event.preventDefault();
+    alert("Заявка отправлена! 🚀");
+}
+</script>
+
+</body>
+</html>
